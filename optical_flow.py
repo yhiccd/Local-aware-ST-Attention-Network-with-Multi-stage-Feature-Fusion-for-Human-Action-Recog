@@ -14,22 +14,19 @@ def extractFrames(cap):
 
 	Arguments:
 	cap -- VideoCapture of the video being processed
-
-	Returns:
-	frames -- list of resized (299 x 299) RGB frames 
 	'''
 
 	frames = []
 	
 	# Desired dimensions
-	height = 224
+	height = 300
 	width = 224
 	dim = (width, height)
 
 	while True:
 		ret, frame = cap.read()
 		if ret:
-			# Resize frame to be 224 x 224
+			# Resize frame to be 300 x 224
 			frame = cv.resize(frame, dim, interpolation = cv.INTER_AREA)
 
 			# Add frame to the list of frames
